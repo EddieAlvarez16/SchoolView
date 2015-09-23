@@ -1,0 +1,15 @@
+﻿<Window x:Class="MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:OnlineCourses="clr-namespace:Modules.OnlineCourses.Views"
+    xmlns:OnsiteCourses="clr-namespace:Modules.OnsiteCourses.Views"
+    xmlns:StudentsGrades="clr-namespace:Modules.StudentGrade.Views"
+    xmlns:Courses="clr-namespace:Modules.Courses.Views"
+    xmlns:Persons="clr-namespace:Modules.Person.Views"
+    xmlns:Departments="clr-namespace:Modules.Departments.Views"
+    xmlns:OfficeAsignament="clr-namespace:Modules.OfficeAsignament.Views"
+    Title="MainWindow" Height="377" Width="568">
+    <Grid>
+        <Persons:PersonList  x:Name="CoursesControl"/>
+    </Grid>
+</Window>
