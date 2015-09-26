@@ -10,6 +10,6 @@
     xmlns:OfficeAsignament="clr-namespace:Modules.OfficeAsignament.Views"
     Title="MainWindow" Height="377" Width="568">
     <Grid>
-        <Persons:PersonList  x:Name="CoursesControl"/>
+        <StudentsGrades:StudentGradesList  x:Name="CoursesControl"/>
     </Grid>
 </Window>

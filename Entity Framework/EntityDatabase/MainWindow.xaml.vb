@@ -12,7 +12,7 @@ Class MainWindow
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Me.CoursesControl.DataContext = New PersonViewModel
+        Me.CoursesControl.DataContext = New StudentGradeViewModel
 
 
     End Sub
