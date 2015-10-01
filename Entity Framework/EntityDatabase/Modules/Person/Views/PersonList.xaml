@@ -14,8 +14,11 @@
                 <DataGridTextColumn x:Name="LastNameColumn" Binding="{Binding Path=LastName}" Header="Last Name" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="FirstNameColumn" Binding="{Binding Path=FirstName}" Header="First Name" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="HireDateColumn" Binding="{Binding Path=HireDate}" Header="Hire Date" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="EnrollmentDateColumn" Binding="{Binding Path=EnrollmentID}" Header="EnrollmentId" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="EnrollmentDateColumn" Binding="{Binding Path=EnrollmentDate}" Header="Enrollment Date" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Margin="116,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="206,319,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

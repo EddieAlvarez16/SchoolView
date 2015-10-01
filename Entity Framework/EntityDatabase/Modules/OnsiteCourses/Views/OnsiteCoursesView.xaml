@@ -16,5 +16,8 @@
                 <DataGridTextColumn x:Name="timeColumn" Binding="{Binding Path=Time}" Header="Time" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Margin="115,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="205,319,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

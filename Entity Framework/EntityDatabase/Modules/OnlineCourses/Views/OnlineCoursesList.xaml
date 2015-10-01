@@ -14,5 +14,8 @@ d:DesignHeight="348" d:DesignWidth="569">
                 <DataGridTextColumn x:Name="UrlColumn" Binding="{Binding Path=URL}" Header="URL" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modify" HorizontalAlignment="Left" Margin="114,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="205,319,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

@@ -8,8 +8,30 @@
     xmlns:Persons="clr-namespace:Modules.Person.Views"
     xmlns:Departments="clr-namespace:Modules.Departments.Views"
     xmlns:OfficeAsignament="clr-namespace:Modules.OfficeAsignament.Views"
-    Title="MainWindow" Height="377" Width="568">
+    Title="School" Height="440" Width="650">
     <Grid>
-        <StudentsGrades:StudentGradesList  x:Name="CoursesControl"/>
+        <TabControl HorizontalAlignment="Left" Height="389" Margin="10,10,0,0" VerticalAlignment="Top" Width="622">
+            <TabItem Header="Courses" HorizontalAlignment="Left" >
+                <Courses:CoursesList x:Name="CoursesControl"/>
+            </TabItem>
+            <TabItem Header="Departments">
+                <Departments:DepartmentsList x:Name="DepartmentControl"/>
+            </TabItem>
+            <TabItem Header="Office Asignament">
+                <OfficeAsignament:OfficeAsignamentList x:Name="OfficeControl"/>
+             </TabItem> 
+            <TabItem Header="Online Courses">
+                <OnlineCourses:OnlineCoursesList x:Name="OnlineCoursesControl"/>
+            </TabItem>
+            <TabItem Header="Onsite Courses">
+                <OnsiteCourses:OnsiteCoursesView x:Name="OnsiteCoursesControl"/>
+            </TabItem>
+            <TabItem Header="Person">
+                <Persons:PersonList x:Name="PersonControl"/>
+            </TabItem>
+            <TabItem Header="Student Grade">
+                <StudentsGrades:StudentGradesList x:Name="StudentControl"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
