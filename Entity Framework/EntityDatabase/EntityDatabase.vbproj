@@ -141,6 +141,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Modules\CoursesCrud\Views\CoursesCrusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Courses\Views\CoursesList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,7 +153,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\DepatmentsCrud\Views\DepartMentsCrudView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\OfficeAsignamentCrud\Views\OfficeAsignamentCrudView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\OfficeAsignament\Views\OfficeAsignamentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\OnlineCoursesCrud\Views\OnlineCoursesCrudView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,11 +173,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\OnsiteCoursesCrud\Views\OnsiteCoursesCrudView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\OnsiteCourses\Views\OnsiteCoursesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\PersonCrud\Views\PersonCrudView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Person\Views\PersonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\StudentGradeCrud\Views\StudentGradeCrudView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +218,10 @@
     <Import Include="System.Windows.Navigation" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\CoursesCrud\ViewModels\CoursesCrudViewModel.vb" />
+    <Compile Include="Modules\CoursesCrud\Views\CoursesCrusView.xaml.vb">
+      <DependentUpon>CoursesCrusView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Courses\ViewModels\CoursesViewModel.vb" />
     <Compile Include="Modules\Departments\ViewModels\DepartmentsViewModel.vb" />
     <Compile Include="Modules\Courses\Views\CoursesList.xaml.vb">
@@ -198,21 +230,45 @@
     <Compile Include="Modules\Departments\Views\DepartmentsList.xaml.vb">
       <DependentUpon>DepartmentsList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DepatmentsCrud\ViewModels\DepartmentsCrudViewModel.vb" />
+    <Compile Include="Modules\DepatmentsCrud\Views\DepartMentsCrudView.xaml.vb">
+      <DependentUpon>DepartMentsCrudView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OfficeAsignamentCrud\ViewModels\OfficeAsignamentCrudViewModel.vb" />
+    <Compile Include="Modules\OfficeAsignamentCrud\Views\OfficeAsignamentCrudView.xaml.vb">
+      <DependentUpon>OfficeAsignamentCrudView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\OfficeAsignament\ViewModels\OfficeAsignamentViewModel.vb" />
     <Compile Include="Modules\OfficeAsignament\Views\OfficeAsignamentList.xaml.vb">
       <DependentUpon>OfficeAsignamentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OnlineCoursesCrud\ViewModels\OnlineCoursesCrudViewModel.vb" />
+    <Compile Include="Modules\OnlineCoursesCrud\Views\OnlineCoursesCrudView.xaml.vb">
+      <DependentUpon>OnlineCoursesCrudView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\OnlineCourses\ViewModels\OnlineCoursesViewModels.vb" />
     <Compile Include="Modules\OnlineCourses\Views\OnlineCoursesList.xaml.vb">
       <DependentUpon>OnlineCoursesList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\OnsiteCoursesCrud\ViewModels\OnsiteCoursesCrudViewModel.vb" />
+    <Compile Include="Modules\OnsiteCoursesCrud\Views\OnsiteCoursesCrudView.xaml.vb">
+      <DependentUpon>OnsiteCoursesCrudView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\OnsiteCourses\ViewModels\OnsiteCoursesViewModel.vb" />
     <Compile Include="Modules\OnsiteCourses\Views\OnsiteCoursesView.xaml.vb">
       <DependentUpon>OnsiteCoursesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\PersonCrud\ViewModels\PersonCrudViewModel.vb" />
+    <Compile Include="Modules\PersonCrud\Views\PersonCrudView.xaml.vb">
+      <DependentUpon>PersonCrudView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Person\ViewModels\PersonViewModel.vb" />
     <Compile Include="Modules\Person\Views\PersonList.xaml.vb">
       <DependentUpon>PersonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\StudentGradeCrud\ViewModels\StudentGradeCrudViewModel.vb" />
+    <Compile Include="Modules\StudentGradeCrud\Views\StudentGradeCrudView.xaml.vb">
+      <DependentUpon>StudentGradeCrudView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\StudentGrade\ViewModels\StudentGradeViewModel.vb" />
     <Compile Include="Modules\StudentGrade\Views\StudentGradesList.xaml.vb">
