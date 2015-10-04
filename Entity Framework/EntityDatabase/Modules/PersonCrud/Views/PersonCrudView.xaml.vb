@@ -1,3 +1,5 @@
-﻿Public Class PersonCrudView
+﻿Namespace Modules.PersonCrud.Views
+    Public Class PersonCrudView
 
-End Class
+    End Class
+End Namespace

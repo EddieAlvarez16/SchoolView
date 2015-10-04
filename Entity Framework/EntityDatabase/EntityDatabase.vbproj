@@ -52,6 +52,25 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Desktop\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\..\Bin\Desktop\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\..\..\..\Bin\Desktop\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.UnityExtensions">
+      <HintPath>..\..\..\..\Bin\Desktop\Microsoft.Practices.Prism.UnityExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\Bin\Desktop\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Bin\Desktop\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -85,6 +104,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BusinessLogic\Helpers\ViewModelBase.vb" />
+    <Compile Include="BusinessLogic\Infrastructure\RegionNames.vb" />
     <Compile Include="BusinessLogic\Services\Implementations\CourseService.vb" />
     <Compile Include="BusinessLogic\Services\Implementations\DepartmentService.vb" />
     <Compile Include="BusinessLogic\Services\Implementations\OfficeAsignamentService.vb" />
@@ -153,27 +173,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modules\DepatmentsCrud\Views\DepartMentsCrudView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Modules\OfficeAsignamentCrud\Views\OfficeAsignamentCrudView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Modules\OfficeAsignament\Views\OfficeAsignamentList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modules\OnlineCoursesCrud\Views\OnlineCoursesCrudView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Modules\OnlineCourses\Views\OnlineCoursesList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Modules\OnsiteCoursesCrud\Views\OnsiteCoursesCrudView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,10 +190,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modules\Person\Views\PersonList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Modules\StudentGradeCrud\Views\StudentGradeCrudView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,29 +230,13 @@
     <Compile Include="Modules\Departments\Views\DepartmentsList.xaml.vb">
       <DependentUpon>DepartmentsList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modules\DepatmentsCrud\ViewModels\DepartmentsCrudViewModel.vb" />
-    <Compile Include="Modules\DepatmentsCrud\Views\DepartMentsCrudView.xaml.vb">
-      <DependentUpon>DepartMentsCrudView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\OfficeAsignamentCrud\ViewModels\OfficeAsignamentCrudViewModel.vb" />
-    <Compile Include="Modules\OfficeAsignamentCrud\Views\OfficeAsignamentCrudView.xaml.vb">
-      <DependentUpon>OfficeAsignamentCrudView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Modules\OfficeAsignament\ViewModels\OfficeAsignamentViewModel.vb" />
     <Compile Include="Modules\OfficeAsignament\Views\OfficeAsignamentList.xaml.vb">
       <DependentUpon>OfficeAsignamentList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modules\OnlineCoursesCrud\ViewModels\OnlineCoursesCrudViewModel.vb" />
-    <Compile Include="Modules\OnlineCoursesCrud\Views\OnlineCoursesCrudView.xaml.vb">
-      <DependentUpon>OnlineCoursesCrudView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Modules\OnlineCourses\ViewModels\OnlineCoursesViewModels.vb" />
     <Compile Include="Modules\OnlineCourses\Views\OnlineCoursesList.xaml.vb">
       <DependentUpon>OnlineCoursesList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\OnsiteCoursesCrud\ViewModels\OnsiteCoursesCrudViewModel.vb" />
-    <Compile Include="Modules\OnsiteCoursesCrud\Views\OnsiteCoursesCrudView.xaml.vb">
-      <DependentUpon>OnsiteCoursesCrudView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\OnsiteCourses\ViewModels\OnsiteCoursesViewModel.vb" />
     <Compile Include="Modules\OnsiteCourses\Views\OnsiteCoursesView.xaml.vb">
@@ -265,10 +249,6 @@
     <Compile Include="Modules\Person\ViewModels\PersonViewModel.vb" />
     <Compile Include="Modules\Person\Views\PersonList.xaml.vb">
       <DependentUpon>PersonList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\StudentGradeCrud\ViewModels\StudentGradeCrudViewModel.vb" />
-    <Compile Include="Modules\StudentGradeCrud\Views\StudentGradeCrudView.xaml.vb">
-      <DependentUpon>StudentGradeCrudView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\StudentGrade\ViewModels\StudentGradeViewModel.vb" />
     <Compile Include="Modules\StudentGrade\Views\StudentGradesList.xaml.vb">
