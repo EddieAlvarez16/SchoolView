@@ -14,6 +14,7 @@ Namespace Modules.CoursesCrud.ViewModels
         Private _courseEdit As Course
         Private _Id As Integer
         Private _cancelCommand As ICommand
+        Private _isEnabled As Boolean
 
         Public Property Title As String
             Get
@@ -108,6 +109,15 @@ Namespace Modules.CoursesCrud.ViewModels
                 OnPropertyChanged("Department")
             End Set
         End Property
+
+        Public Property Enabled As Boolean
+            Get
+                Return Me._isEnabled
+            End Get
+            Set(value As Boolean)
+                _isEnabled = value
+            End Set
+        End Property
         Sub CancelAction()
             _newView.Close()
         End Sub
@@ -119,6 +129,25 @@ Namespace Modules.CoursesCrud.ViewModels
             For Each element In departments
                 _departments.Add(element)
             Next
+            _isEnabled = True
+        End Sub
+
+        Sub New(ByRef newView As CoursesCrusView, u As Course)
+            Me._newView = newView
+            _courseEdit = u
+            _departments = New ObservableCollection(Of Department)
+            Dim departments As IQueryable(Of Department) = DataContext.DBEntities.Departments
+            For Each element In departments
+                _departments.Add(element)
+            Next
+            If u Is Nothing Then
+                Exit Sub
+            End If
+            _Id = _courseEdit.CourseID
+            _courses = _courseEdit.Title
+            _credits = _courseEdit.Credits
+            _selectedDepartment = _courseEdit.Department
+            _isEnabled = False
         End Sub
     End Class
 End Namespace

@@ -17,7 +17,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Add" HorizontalAlignment="Left" Command="{Binding AddCourse}" Margin="25,319,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Modify" HorizontalAlignment="Left" Margin="114,319,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="207,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modify" Command="{Binding EditButton}" HorizontalAlignment="Left" Margin="114,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Delete" Command="{Binding DeleteButton}" HorizontalAlignment="Left" Margin="207,319,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

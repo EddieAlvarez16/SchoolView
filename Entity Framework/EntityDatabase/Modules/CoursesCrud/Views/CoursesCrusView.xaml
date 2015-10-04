@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Height="350" Width="450">
     <Grid x:Name="MainGrid">
-        <TextBox HorizontalAlignment="Left" Height="30" Margin="136,10,0,0" TextWrapping="Wrap" Text="{Binding Id}" VerticalAlignment="Top" Width="141"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="136,10,0,0" TextWrapping="Wrap" Text="{Binding Id}" IsEnabled="{Binding Enabled}" VerticalAlignment="Top" Width="141"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="64" Height="30" FontSize="16"/>
         <TextBox HorizontalAlignment="Left" Height="30" Margin="136,57,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Width="141"/>
         <Label Content="Title" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="64" Height="30" FontSize="16"/>

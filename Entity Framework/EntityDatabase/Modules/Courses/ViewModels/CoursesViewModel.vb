@@ -8,6 +8,7 @@ Imports BusinessLogic.Services.Implementations
 Imports BusinessLogic.Services.Interfaces
 Imports System.Collections.ObjectModel
 Imports BusinessLogic.Infrastructure
+Imports BusinessObjects.Helpers
 Namespace Modules.Courses.ViewModels
     Public Class CoursesViewModel
         Inherits ViewModelBase
@@ -19,6 +20,8 @@ Namespace Modules.Courses.ViewModels
         Private _container As IUnityContainer
         Private addComand As ICommand
         Private _select As Course
+        Private _editCommand As ICommand
+        Private _deleteCommand As ICommand
 
         Public Property Courses As ObservableCollection(Of Course)
             Get
@@ -66,6 +69,7 @@ Namespace Modules.Courses.ViewModels
             For Each elements In Me.GetCourses
                 Me._courses.Add(elements)
             Next
+            Refresh()
         End Sub
 
         Sub AddCourseExecute()
@@ -83,6 +87,48 @@ Namespace Modules.Courses.ViewModels
             For Each elements In Me.GetCourses
                 Me._courses.Add(elements)
             Next
+        End Sub
+
+        Public ReadOnly Property EditButton As ICommand
+            Get
+                If Me._editCommand Is Nothing Then
+                    Me._editCommand = New RelayComand(AddressOf EditCourse)
+                End If
+                Return Me._editCommand
+            End Get
+        End Property
+
+        Sub EditCourse()
+            If Selected IsNot Nothing Then
+                Using context As New SchoolEntities
+                    View = New CoursesCrusView(Selected)
+                    View.ShowDialog()
+                    Refresh()
+                End Using
+            Else
+                MessageBox.Show("You must select a course")
+            End If
+        End Sub
+
+        Public ReadOnly Property DeleteButton As ICommand
+            Get
+                If Me._deleteCommand Is Nothing Then
+                    Me._deleteCommand = New RelayComand(AddressOf DeleteCourse)
+                End If
+                Return Me._deleteCommand
+            End Get
+        End Property
+
+        Sub DeleteCourse()
+            If Selected IsNot Nothing Then
+                DataContext.DBEntities.Courses.Remove((From item In DataContext.DBEntities.Courses
+                                                       Where item.CourseID = Selected.CourseID
+                                                       Select item).FirstOrDefault)
+                DataContext.DBEntities.SaveChanges()
+                Refresh()
+            Else
+                MessageBox.Show("You must select a course")
+            End If
         End Sub
     End Class
 End Namespace
