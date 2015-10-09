@@ -177,7 +177,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\OfficeAsignament\Views\Add_OfficeAsignament.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\OfficeAsignament\Views\OfficeAsignamentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\OnlineCourses\Views\Add_OnlineCourses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -238,11 +246,19 @@
     <Compile Include="Modules\Departments\Views\DepartmentsList.xaml.vb">
       <DependentUpon>DepartmentsList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\OfficeAsignament\ViewModels\Add_OfficeAsignamentViewModel.vb" />
     <Compile Include="Modules\OfficeAsignament\ViewModels\OfficeAsignamentViewModel.vb" />
+    <Compile Include="Modules\OfficeAsignament\Views\Add_OfficeAsignament.xaml.vb">
+      <DependentUpon>Add_OfficeAsignament.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\OfficeAsignament\Views\OfficeAsignamentList.xaml.vb">
       <DependentUpon>OfficeAsignamentList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\OnlineCourses\ViewModels\Add_OnlineCoursesViewModel.vb" />
     <Compile Include="Modules\OnlineCourses\ViewModels\OnlineCoursesViewModels.vb" />
+    <Compile Include="Modules\OnlineCourses\Views\Add_OnlineCourses.xaml.vb">
+      <DependentUpon>Add_OnlineCourses.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\OnlineCourses\Views\OnlineCoursesList.xaml.vb">
       <DependentUpon>OnlineCoursesList.xaml</DependentUpon>
     </Compile>
