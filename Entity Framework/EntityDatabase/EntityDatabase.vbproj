@@ -193,11 +193,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modules\OnsiteCourses\Views\OnsiteCoursesView.xaml">
+    <Page Include="Modules\OnsiteCourses\Views\Add_OnsiteCourses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modules\PersonCrud\Views\PersonCrudView.xaml">
+    <Page Include="Modules\OnsiteCourses\Views\OnsiteCoursesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,13 +262,13 @@
     <Compile Include="Modules\OnlineCourses\Views\OnlineCoursesList.xaml.vb">
       <DependentUpon>OnlineCoursesList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\OnsiteCourses\ViewModels\Add_OnsiteCoursesViewModel.vb" />
     <Compile Include="Modules\OnsiteCourses\ViewModels\OnsiteCoursesViewModel.vb" />
+    <Compile Include="Modules\OnsiteCourses\Views\Add_OnsiteCourses.xaml.vb">
+      <DependentUpon>Add_OnsiteCourses.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\OnsiteCourses\Views\OnsiteCoursesView.xaml.vb">
       <DependentUpon>OnsiteCoursesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\PersonCrud\ViewModels\PersonCrudViewModel.vb" />
-    <Compile Include="Modules\PersonCrud\Views\PersonCrudView.xaml.vb">
-      <DependentUpon>PersonCrudView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Person\ViewModels\PersonViewModel.vb" />
     <Compile Include="Modules\Person\Views\PersonList.xaml.vb">

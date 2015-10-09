@@ -1,8 +1,4 @@
-﻿Imports Microsoft.Practices.Prism.Regions
-Imports Microsoft.Practices.Unity
-Imports Microsoft.Practices.Prism.UnityExtensions
-Imports Microsoft.Practices.Prism.Commands
-Imports Microsoft.Practices.Prism.Events
+﻿
 Imports BusinessLogic.Helpers
 Imports BusinessLogic.Services.Implementations
 Imports BusinessLogic.Services.Interfaces
