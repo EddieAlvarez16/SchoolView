@@ -16,8 +16,6 @@ Namespace Modules.Courses.ViewModels
         Public Shadows View As CoursesCrusView
         Private _courses As ObservableCollection(Of Course)
         Private dataAccess As ICourseService
-        Private _regionManager As IRegionManager
-        Private _container As IUnityContainer
         Private addComand As ICommand
         Private _select As Course
         Private _editCommand As ICommand
@@ -55,20 +53,8 @@ Namespace Modules.Courses.ViewModels
             Return Me.dataAccess.GetCourses
         End Function
 
-        Sub New(ByVal regionManager As IRegionManager, ByVal container As IUnityContainer)
-
-            _regionManager = regionManager
-            _container = container
-
-        End Sub
-
         Sub New()
             Me._courses = New ObservableCollection(Of Course)
-            ServiceLocator.RegisterService(Of ICourseService)(New CourseService)
-            Me.dataAccess = GetService(Of ICourseService)()
-            For Each elements In Me.GetCourses
-                Me._courses.Add(elements)
-            Next
             Refresh()
         End Sub
 
