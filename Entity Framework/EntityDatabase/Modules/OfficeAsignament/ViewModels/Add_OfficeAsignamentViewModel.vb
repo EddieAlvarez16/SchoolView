@@ -107,7 +107,7 @@ Namespace Modules.OfficeAsignament.ViewModels
                     DataContext.DBEntities.SaveChanges()
                     _newView.Close()
                 Else
-                    Dim Office As OfficeAssignment = (From item In DataContext.DBEntities.OfficeAssignments Where item.InstructorID = _Office.InstructorID
+                    Dim Office As OfficeAssignment = (From item In DataContext.DBEntities.OfficeAssignments Where item.InstructorID = officeEdit.InstructorID
                              Select item).FirstOrDefault()
                     Office.Person = _selectedItem
                     Office.Location = _Location
