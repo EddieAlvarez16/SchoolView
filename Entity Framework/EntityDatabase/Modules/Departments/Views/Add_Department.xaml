@@ -13,6 +13,6 @@
         <TextBox HorizontalAlignment="Left" Height="31" Margin="147,211,0,0" TextWrapping="Wrap" Text="{Binding Administrator}" VerticalAlignment="Top" Width="215"/>
         <Button Content="Accept" Command="{Binding AcceptButton}" HorizontalAlignment="Left" Margin="207,282,0,0" VerticalAlignment="Top" Width="94" Height="27" FontSize="16"/>
         <Button Content="Cancel" Command="{Binding CancelButton}" HorizontalAlignment="Left" Margin="325,282,0,0" VerticalAlignment="Top" Width="94" Height="27" FontSize="16"/>
-        <Label Content="DD/MM/AAAA" HorizontalAlignment="Left" Margin="147,181,0,0" VerticalAlignment="Top" Height="25" Width="215" FontSize="14"/>
+        <Label Content="MM/DD/AAAA" HorizontalAlignment="Left" Margin="147,181,0,0" VerticalAlignment="Top" Height="25" Width="215" FontSize="14"/>
     </Grid>
 </Window>

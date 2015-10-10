@@ -1,4 +1,5 @@
 ﻿Imports BusinessLogic.Helpers
+Imports BusinessObjects.Helpers
 Imports BusinessLogic.Services.Implementations
 Imports BusinessLogic.Services.Interfaces
 Imports System.Collections.ObjectModel
@@ -13,6 +14,7 @@ Namespace Modules.OnsiteCourses.ViewModels
         Private addCommand As ICommand
         Private modCommand As ICommand
         Private deleteCommand As ICommand
+        Private _select As OnsiteCourse
 
         Public Property CoursesOnsite As ObservableCollection(Of OnsiteCourse)
             Get
@@ -24,12 +26,39 @@ Namespace Modules.OnsiteCourses.ViewModels
             End Set
         End Property
 
+        Public Property Selected As OnsiteCourse
+            Get
+                Return _select
+            End Get
+            Set(value As OnsiteCourse)
+                _select = value
+            End Set
+        End Property
+
         Public ReadOnly Property AddButton As ICommand
             Get
                 If Me.addCommand Is Nothing Then
                     Me.addCommand = New RelayComand(AddressOf AddExecute)
                 End If
                 Return Me.addCommand
+            End Get
+        End Property
+
+        Public ReadOnly Property ModButton As ICommand
+            Get
+                If Me.modCommand Is Nothing Then
+                    Me.modCommand = New RelayComand(AddressOf ModExecute)
+                End If
+                Return Me.modCommand
+            End Get
+        End Property
+
+        Public ReadOnly Property DeleteButton As ICommand
+            Get
+                If Me.deleteCommand Is Nothing Then
+                    Me.deleteCommand = New RelayComand(AddressOf DeleteExevute)
+                End If
+                Return Me.deleteCommand
             End Get
         End Property
 
@@ -57,6 +86,30 @@ Namespace Modules.OnsiteCourses.ViewModels
                 View.ShowDialog()
                 Refresh()
             End Using
+        End Sub
+
+        Sub ModExecute()
+            If Selected IsNot Nothing Then
+                Using Context As New SchoolEntities
+                    View = New Add_OnsiteCourses(Selected)
+                    View.ShowDialog()
+                    Refresh()
+                End Using
+            Else
+                MessageBox.Show("Select a Course")
+            End If
+        End Sub
+
+        Sub DeleteExevute()
+            If Selected IsNot Nothing Then
+                DataContext.DBEntities.OnsiteCourses.Remove((From item In DataContext.DBEntities.OnsiteCourses
+                                                             Where item.CourseID = Selected.CourseID
+                                                             Select item).FirstOrDefault)
+                DataContext.DBEntities.SaveChanges()
+                Refresh()
+            Else
+                MessageBox.Show("Select a Course")
+            End If
         End Sub
     End Class
 End Namespace

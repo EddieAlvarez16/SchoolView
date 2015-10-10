@@ -7,7 +7,7 @@
              d:DesignHeight="348" d:DesignWidth="569">
     <Grid Name="MainGrid">
         <DataGrid HorizontalAlignment="Left" Margin="25,30,0,0" VerticalAlignment="Top"
-                  ItemsSource="{Binding  CoursesOnsite}" Height="284" Width="512"
+                  ItemsSource="{Binding  CoursesOnsite}" Height="284" Width="512" SelectedItem="{Binding Selected}"
                   AutoGenerateColumns="false" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Path=Course.Title}" Header="Id" Width="SizeToHeader"/>
@@ -16,8 +16,8 @@
                 <DataGridTextColumn x:Name="timeColumn" Binding="{Binding Path=Time}" Header="Time" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Modify" HorizontalAlignment="Left" Margin="115,319,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="205,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Add" Command="{Binding AddButton}" HorizontalAlignment="Left" Margin="25,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Modify" Command="{Binding ModButton}" HorizontalAlignment="Left" Margin="115,319,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Delete" Command="{Binding DeleteButton}" HorizontalAlignment="Left" Margin="205,319,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </UserControl>

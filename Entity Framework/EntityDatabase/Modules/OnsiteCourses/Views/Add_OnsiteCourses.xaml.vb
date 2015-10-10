@@ -9,5 +9,10 @@ Namespace Modules.OnsiteCourses.Views
             ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
             Me.Maingrid.DataContext = New Add_OnsiteCoursesViewModel(Me)
         End Sub
+
+        Sub New(ByVal Onsite As OnsiteCourse)
+            InitializeComponent()
+            Me.Maingrid.DataContext = New Add_OnsiteCoursesViewModel(Me, Onsite)
+        End Sub
     End Class
 End Namespace

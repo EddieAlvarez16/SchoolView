@@ -7,9 +7,12 @@
         <Label Content="Location" HorizontalAlignment="Left" Margin="63,103,0,0" VerticalAlignment="Top"/>
         <Label Content="Days" HorizontalAlignment="Left" Margin="63,158,0,0" VerticalAlignment="Top"/>
         <Label Content="Time" HorizontalAlignment="Left" Margin="63,221,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="170,58,0,0" VerticalAlignment="Top" Width="165" Height="26"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="170,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="165" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="165" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="170,221,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="165" FontSize="14"/>
+        <ComboBox HorizontalAlignment="Left" DisplayMemberPath="Title" ItemsSource="{Binding Courses}" SelectedItem="{Binding SelectCourse}" Margin="170,58,0,0" VerticalAlignment="Top" Width="165" Height="26"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="170,103,0,0" TextWrapping="Wrap" Text="{Binding Location}" VerticalAlignment="Top" Width="165" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,158,0,0" TextWrapping="Wrap" Text="{Binding Days}" VerticalAlignment="Top" Width="165" FontSize="14"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="170,221,0,0" TextWrapping="Wrap" Text="{Binding Time}" VerticalAlignment="Top" Width="165" FontSize="14"/>
+        <Button Content="Accept" Command="{Binding AceptButton}" HorizontalAlignment="Left" Margin="242,270,0,0" VerticalAlignment="Top" Width="70" FontSize="16"/>
+        <Button Content="Cancel" Command="{Binding CancelButton}" HorizontalAlignment="Left" Margin="331,270,0,0" VerticalAlignment="Top" Width="75" FontSize="16"/>
+        <Label Content="MM/DD/AAAA" HorizontalAlignment="Left" Margin="335,221,0,0" VerticalAlignment="Top" Height="32" Width="99"/>
     </Grid>
 </Window>
