@@ -1,0 +1,19 @@
+﻿<Window x:Class="Modules.Person.Views.Add_Person"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Add_Person" Height="400" Width="450">
+    <Grid x:Name="MainGrid">
+        <Label Content="LastName" HorizontalAlignment="Left" Margin="33,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.044,-1.454" Height="32" Width="105" FontSize="18"/>
+        <Label Content="FirstName" HorizontalAlignment="Left" Margin="33,94,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.044,-1.454" Height="29" Width="105" FontSize="18"/>
+        <Label Content="Hiredate" HorizontalAlignment="Left" Margin="33,147,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.044,-1.454" Height="32" Width="105" FontSize="18"/>
+        <Label Content="Enrollment Date" HorizontalAlignment="Left" Margin="33,200,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.044,-1.454" Height="29" Width="153" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="181,42,0,0" TextWrapping="Wrap" Text="{Binding Last}" VerticalAlignment="Top" Width="133" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="181,94,0,0" TextWrapping="Wrap" Text="{Binding First}" VerticalAlignment="Top" Width="133" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="181,147,0,0" TextWrapping="Wrap" Text="{Binding HireDate}" VerticalAlignment="Top" Width="133" FontSize="18"/>
+        <TextBox HorizontalAlignment="Left" Height="32" Margin="186,200,0,0" TextWrapping="Wrap" Text="{Binding Enrollment}" VerticalAlignment="Top" Width="133" FontSize="18"/>
+        <Button Content="Accept" Command="{Binding AceptButton}" HorizontalAlignment="Left" Margin="203,307,0,0" VerticalAlignment="Top" Width="93" Height="26" FontSize="16"/>
+        <Button Content="Cancel" Command="{Binding CancelButton}" HorizontalAlignment="Left" Margin="318,307,0,0" VerticalAlignment="Top" Width="93" Height="26" FontSize="16"/>
+        <Label Content="Asignament" HorizontalAlignment="Left" Margin="33,249,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.044,-1.454" Height="35" Width="132" FontSize="18"/>
+        <ComboBox x:Name="cb" HorizontalAlignment="Left" Margin="186,249,0,0"  VerticalAlignment="Top" Width="133" Height="35"/>
+    </Grid>
+</Window>
